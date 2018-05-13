@@ -1,8 +1,13 @@
+# webpack build
+#  docker-composer run --rm vuejs webpack
 version: "3"
 services:
   vuejs:
-    image: nginx:1.13-alpine
+    build:
+      ./docker/node
     ports:
-      - 80:80
+      - 8080:8080
+    working_dir: /app
     volumes:
-      - ./vuejs:/usr/share/nginx/html
+      - ./vuejs:/app
+    command: npm run dev
