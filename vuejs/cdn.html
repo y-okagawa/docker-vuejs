@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <title>CDN Sample</title>
+</head>
+<body>
+<div id="app">
+    <h1>Vue.js</h1>
+    <h2>変数</h2>
+    <p>{{ message }}</p>
+    <h2>条件分岐</h2>
+    <p v-if="show">表示</p>
+    <h2>繰り返し</h2>
+    <ul>
+        <li v-for="item in items">
+            value: {{item.value}}
+        </li>
+    </ul>
+</div>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!!',
+            show: true,
+            items: [
+                {value: 1},
+                {value: 2},
+                {value: 3}
+            ]
+        }
+    });
+</script>
+</body>
+</html>
