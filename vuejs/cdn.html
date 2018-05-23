@@ -18,8 +18,19 @@
             value: {{item.value}}
         </li>
     </ul>
+    <h2>コンポーネント</h2>
+    <component-sample></component-sample>
 </div>
 <script>
+    Vue.component('component-sample', {
+        data: function () {
+            return {
+                message: "Component Sample"
+            }
+        },
+        template: '<div><p>{{ message }}</p></div>'
+    })
+
     const vm = new Vue({
         el: '#app',
         data: {
@@ -32,6 +43,7 @@
             ]
         }
     });
+
 </script>
 </body>
 </html>
