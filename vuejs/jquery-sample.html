@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+</head>
+<body>
+    <h1>jQuery Version</h1>
+    <div id="app">
+        <label>
+            <input type="text" id="itemName">
+        </label>
+        <button id="addItem">追加</button>
+    </div>
+<script>
+    $(function() {
+        setItems();
+        $("#addItem").on("click", function() {
+            const name = $("#itemName").val();
+            data.items.push({
+              name: name
+           });
+            $("#items").append("<li>" + name +  "</li>");
+        });
+    });
+    const data = {
+        items: [
+            {name: "item-AAA"},
+            {name: "item-BBB"}
+        ]
+    };
+    const setItems = function () {
+        let items = '<ul id="items">';
+        $.each(data.items, function(i, item) {
+            items = items + "<li>" + item.name +  "</li>"
+        });
+        items = items + "</ul>";
+        $("#app").append(items);
+    }
+</script>
+</body>
+</html>
